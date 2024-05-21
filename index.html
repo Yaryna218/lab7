@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .category-link {
+            cursor: pointer;
+            color: rgb(33, 116, 12);
+            text-decoration: underline;
+        }
+        .product {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#" id="home-link">Home</a>
+            <a class="navbar-brand" href="#" id="catalog-link">Catalog</a>
+        </nav>
+        
+        <div id="content" class="mt-4">
+            <h1>Welcome to our Catalog</h1>
+            <p>Select a category to view our products.</p>
+            <div id="categories"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('home-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            loadHome();
+        });
+
+        document.getElementById('catalog-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            loadCategories();
+        });
+
+        function loadHome() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <h1>Welcome to our Catalog</h1>
+                <p>Select a category to view our products.</p>
+                <div id="categories"></div>
+            `;
+            loadCategories();
+        }
+
+        function loadCategories() {
+            fetch('categories.json')
+                .then(response => response.json())
+                .then(categories => {
+                    const categoriesContainer = document.getElementById('categories');
+                    categoriesContainer.innerHTML = '<h2>Categories</h2>';
+                    categories.forEach(category => {
+                        const categoryLink = document.createElement('div');
+                        categoryLink.innerHTML = `<span class="category-link" data-category="${category.shortname}">${category.name}</span>`;
+                        categoriesContainer.appendChild(categoryLink);
+                    });
+
+                    const specialsLink = document.createElement('div');
+                    specialsLink.innerHTML = `<span class="category-link" id="specials-link">Specials</span>`;
+                    categoriesContainer.appendChild(specialsLink);
+
+                    document.querySelectorAll('.category-link').forEach(link => {
+                        link.addEventListener('click', function() {
+                            const category = this.getAttribute('data-category');
+                            if (category) {
+                                loadCategory(category);
+                            } else {
+                                loadRandomCategory();
+                            }
+                        });
+                    });
+                });
+        }
+
+        function loadCategory(categoryShortname) {
+            fetch(`${categoryShortname}.json`)
+                .then(response => response.json())
+                .then(products => {
+                    const content = document.getElementById('content');
+                    content.innerHTML = `<h2>${categoryShortname.charAt(0).toUpperCase() + categoryShortname.slice(1)}</h2>`;
+                    products.forEach(product => {
+                        const productDiv = document.createElement('div');
+                        productDiv.classList.add('product');
+                        productDiv.innerHTML = `
+                            <img src="${product.image}" alt="${product.name}" class="img-thumbnail">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p><strong>${product.price}</strong></p>
+                        `;
+                        content.appendChild(productDiv);
+                    });
+                });
+        }
+
+        function loadRandomCategory() {
+            fetch('categories.json')
+                .then(response => response.json())
+                .then(categories => {
+                    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+                    loadCategory(randomCategory.shortname);
+                });
+        }
+
+  
+        loadHome();
+    </script>
+</body>
+</html>
