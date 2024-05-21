@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Electronics",
+        "shortname": "electronics",
+        "notes": "Various electronic items"
+    },
+    {
+        "id": 2,
+        "name": "Books",
+        "shortname": "books",
+        "notes": "A selection of books"
+    },
+    {
+        "id": 3,
+        "name": "Clothing",
+        "shortname": "clothing",
+        "notes": "Fashionable clothing items"
+    },
+    {
+        "id": 4,
+        "name": "Toys",
+        "shortname": "toys",
+        "notes": "Toys for children"
+    }
+]
