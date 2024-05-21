@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "T-Shirt",
+        "shortname": "t-shirt",
+        "description": "A comfortable cotton T-shirt.",
+        "price": "$20",
+        "image": "https://place-hold.it/200x200?text=T-Shirt"
+    },
+    {
+        "id": 2,
+        "name": "Jeans",
+        "shortname": "jeans",
+        "description": "Stylish blue jeans.",
+        "price": "$40",
+        "image": "https://place-hold.it/200x200?text=Jeans"
+    },
+    {
+        "id": 3,
+        "name": "Jacket",
+        "shortname": "jacket",
+        "description": "A warm and cozy jacket.",
+        "price": "$60",
+        "image": "https://place-hold.it/200x200?text=Jacket"
+    },
+    {
+        "id": 4,
+        "name": "Sneakers",
+        "shortname": "sneakers",
+        "description": "Comfortable running shoes.",
+        "price": "$50",
+        "image": "https://place-hold.it/200x200?text=Sneakers"
+    },
+    {
+        "id": 5,
+        "name": "Hat",
+        "shortname": "hat",
+        "description": "A stylish summer hat.",
+        "price": "$15",
+        "image": "https://place-hold.it/200x200?text=Hat"
+    },
+    {
+        "id": 6,
+        "name": "Scarf",
+        "shortname": "scarf",
+        "description": "A warm wool scarf.",
+        "price": "$25",
+        "image": "https://place-hold.it/200x200?text=Scarf"
+    }
+]
