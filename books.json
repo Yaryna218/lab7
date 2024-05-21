@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "The Great Gatsby",
+        "shortname": "great-gatsby",
+        "description": "A novel written by American author F. Scott Fitzgerald.",
+        "price": "$10",
+        "image": "https://place-hold.it/200x200?text=The+Great+Gatsby"
+    },
+    {
+        "id": 2,
+        "name": "1984",
+        "shortname": "1984",
+        "description": "A dystopian social science fiction novel and cautionary tale by the English writer George Orwell.",
+        "price": "$15",
+        "image": "https://place-hold.it/200x200?text=1984"
+    },
+    {
+        "id": 3,
+        "name": "To Kill a Mockingbird",
+        "shortname": "to-kill-a-mockingbird",
+        "description": "A novel by Harper Lee published in 1960.",
+        "price": "$12",
+        "image": "https://place-hold.it/200x200?text=To+Kill+a+Mockingbird"
+    },
+    {
+        "id": 4,
+        "name": "Moby-Dick",
+        "shortname": "moby-dick",
+        "description": "A novel by Herman Melville published in 1851.",
+        "price": "$18",
+        "image": "https://place-hold.it/200x200?text=Moby-Dick"
+    },
+    {
+        "id": 5,
+        "name": "Pride and Prejudice",
+        "shortname": "pride-and-prejudice",
+        "description": "A romantic novel of manners written by Jane Austen in 1813.",
+        "price": "$14",
+        "image": "https://place-hold.it/200x200?text=Pride+and+Prejudice"
+    }
+]
